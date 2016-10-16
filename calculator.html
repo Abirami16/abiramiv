@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Calculator</title>
+	<style type="text/css">
+		div{
+			border: 2px solid #000000;
+			background-color: lightgreen;
+			width: 400px;
+			height: 200px;
+			padding: 10px;
+		}
+		button{
+			background-color: violet;
+			border: 1px solid #000000;
+		}
+		
+	</style>
+</head>
+<body>
+   <div >
+    Input1: <input type="text" name="text1" id="text1"/><br/>
+    Input2: <input type="text" name="text2" id="text2"/>
+    Output: <input type="text" name="text3" id="text3"/>
+    <hr/>
+    <pre>
+
+    Addition       :   <button type="button" name="button1" size="3" onclick="operation(1)">+</button><br/>
+    Subtraction    :   <button type="button" name="button2" size="3" onclick="operation(2)">-</button><br/>
+    Multiplication :   <button type="button" name="button3" size="3" onclick="operation(3)">*</button><br/>
+    Division       :   <button type="button" name="button4" size="3" onclick="operation(4)">/</button><br/>
+   </pre>
+   </div>
+   <script type="text/javascript">
+   	function operation(option)
+   	{
+   		var value1=parseInt(document.getElementById("text1").value);
+   		var value2=parseInt(document.getElementById("text2").value);
+   		var value3;
+   		if(option==1)
+   		{
+   			value3=value1+value2;
+   		}
+        else if(option==2)
+   		{
+   			value3=value1-value2;
+   		}
+   		else if(option==3)
+   		{
+   			value3=value1*value2;
+   		}
+   		else 
+   		{
+   			value3=value1/value2;
+   		}
+   		
+   		document.getElementById("text3").value=value3;
+   	}
+   </script>
+</body>
+</html>
