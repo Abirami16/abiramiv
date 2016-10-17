@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Converter</title>
+	<style type="text/css">
+		div{
+			border: 2px solid #000000;
+			background-color: skyblue;
+			width: 400px;
+			height: 400px;
+			padding: 10px;
+		}
+		 
+	</style>
+</head>
+<body>
+   <div >
+   <pre>
+    input: <input type="text" name="text1" id="text1"/><br/>
+    Output: <input type="text" name="text3" id="text3"/><br/>
+    <hr/>
+    
+
+    Fahrenheit To Celsius :   <button type="button" name="button1" id="1" onclick="operation(1)">F->C</button><br/>
+    Celsius To Fahrenheit :   <button type="button" name="button2" id="2" onclick="operation(2)">C->F</button><br/>
+    Pounds To Kilos       :   <button type="button" name="button3" id="3" onclick="operation(3)">P->K</button><br/>
+    Kilos To Pounds       :   <button type="button" name="button4" id="4" onclick="operation(4)">K->P</button><br/>
+    Meters To Yards       :   <button type="button" name="button5" id="5" onclick="operation(5)">M->Y</button><br/>
+    Yards To Meters       :   <button type="button" name="button6" id="6" onclick="operation(6)">Y->M</button><br/>
+    
+   </pre>
+   </div>
+   <script type="text/javascript">
+   	function operation(option)
+   	{
+      for(var i=1;i<=6;i++)
+      {
+       if(i==option)
+       {
+        document.getElementById(option).style.backgroundColor="blue";
+       }
+       else
+       {
+      document.getElementById(i).style.backgroundColor="white";
+       }
+  }
+      
+   		var value1=parseInt(document.getElementById("text1").value);
+   		
+   		var value2;
+   		if(option==1)
+   		{
+   			value2=(value1-32)*(5/9);
+   		}
+        else if(option==2)
+   		{
+   			value2=(value1*(9/5))+32;
+   		}
+   		else if(option==3)
+   		{
+   			value2=value1*(2.2);
+   		}
+   		else if(option==4)
+   		{
+   			value2=value1/(2.2);
+   		}
+      else if(option==5)
+      {
+        value2=value1/(0.9144);
+      }
+      else 
+      {
+        value2=value1*(0.9144);
+      }
+   		
+   		document.getElementById("text3").value=value2;
+   	}
+   </script>
+</body>
+</html>
